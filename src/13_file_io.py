@@ -23,6 +23,9 @@ file.close()
 
 # YOUR CODE HERE
 file = open("bar.txt", "w")
+
 file.write("first line ")
 file.write("second line ")
 file.write("third line ")
+
+file.close()
