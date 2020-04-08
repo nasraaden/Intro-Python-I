@@ -33,15 +33,22 @@ from datetime import datetime
 
 input = input("Enter date (month and year) separated by a comma: ")
 
-month = datetime.today().month
-year = datetime.today().year
 
-
-def print_calendar(input):
-    if input == "":
+def print_calendar():
+    x = len(sys.argv)
+    month = datetime.now().month
+    year = datetime.now().year
+    if x == 1:
         print(calendar.month(year, month))
+    elif x == 2:
+        m = int(sys.argv[1])
+        print(calendar.month(year, m))
+    elif x == 3:
+        m = int(sys.argv[1])
+        y = int(sys.argv[2])
+        print(calendar.month(y, m))
     else:
-        print("")
+        print("example input: 3,2020")
 
 
-print_calendar(input)
+print_calendar()
