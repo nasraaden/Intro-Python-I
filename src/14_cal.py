@@ -30,3 +30,25 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+input = input("Enter date (month and year) separated by a comma: ")
+
+
+def print_calendar():
+    x = len(sys.argv)
+    month = datetime.now().month
+    year = datetime.now().year
+    if x == 1:
+        print(calendar.month(year, month))
+    elif x == 2:
+        m = int(sys.argv[1])
+        print(calendar.month(year, m))
+    elif x == 3:
+        m = int(sys.argv[1])
+        y = int(sys.argv[2])
+        print(calendar.month(y, m))
+    else:
+        print("example input: 3,2020")
+
+
+print_calendar()
